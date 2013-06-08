@@ -68,5 +68,6 @@ Done!
 Thats all! 
 
 If you have any more question, please read the comments in GraphView.h and GraphView.m or send me a message.
-Please concider the license agreement.
+
+Please concider the MIT License agreement.
 
