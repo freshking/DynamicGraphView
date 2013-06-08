@@ -1,9 +1,10 @@
 
-
 DynamicGraphView
 ================
 
 A simple but effective dynamic GraphView implementation for iPhone SDK for float values >= 0.
+
+![Screenshot](http://i.imgur.com/Kur98cx.png)
 
 Implementing this control into your project is very easy.
 
