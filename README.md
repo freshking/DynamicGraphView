@@ -1,8 +1,7 @@
-
 DynamicGraphView
 ================
 
-A simple but effective dynamic GraphView implementation for iPhone SDK for float values >= 0.
+A simple but effective dynamic GraphView implementation for iPhone SDK for float values.
 
 ![Screenshot](http://i.imgur.com/Kur98cx.png)
 
@@ -36,6 +35,7 @@ Implementing this control into your project is very easy.
     [graphView setSpacing:10];
     [graphView setFill:YES];
     [graphView setStrokeColor:[UIColor redColor]];
+    [graphView setZeroLineStrokeColor:[UIColor greenColor]];
     [graphView setFillColor:[UIColor orangeColor]];
     [graphView setLineWidth:2];
     [self.view addSubview:graphView];
