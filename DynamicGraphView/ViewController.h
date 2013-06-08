@@ -16,9 +16,11 @@
 #import <UIKit/UIKit.h>
 #import "GraphView.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <UITextFieldDelegate> {
     
     GraphView *graphView;
+    
+    UITextField *visiblePoints;
 }
 
 @property (strong, nonatomic) GraphView *graphView;

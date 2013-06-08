@@ -31,7 +31,7 @@
     
     
     // init graphView and set up options
-    graphView = [[GraphView alloc]initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-20, 200)];
+    graphView = [[GraphView alloc]initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-20, 180)];
     [graphView setBackgroundColor:[UIColor yellowColor]];
     [graphView setSpacing:10];
     [graphView setFill:YES];
@@ -52,7 +52,7 @@
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     
     // set up button for pre defined array
-    UIButton *setArray = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 230, 160, 40)];
+    UIButton *setArray = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 200, 160, 40)];
     [setArray setTitle:@"Set Array" forState:UIControlStateNormal];
     [setArray setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [setArray setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
@@ -60,7 +60,7 @@
     [self.view addSubview:setArray];
     
     // set up button for points
-    UIButton *setPoint = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 280, 160, 40)];
+    UIButton *setPoint = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 250, 160, 40)];
     [setPoint setTitle:@"Set Points" forState:UIControlStateNormal];
     [setPoint setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [setPoint setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
@@ -68,20 +68,44 @@
     [self.view addSubview:setPoint];
     
     // set up button for resetting array
-    UIButton *resetGraph = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 330, 160, 40)];
+    UIButton *resetGraph = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 300, 160, 40)];
     [resetGraph setTitle:@"Reset Graph" forState:UIControlStateNormal];
     [resetGraph setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [resetGraph setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [resetGraph addTarget:self action:@selector(resetGraphButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:resetGraph];
     
-    // set up button for resetting array
-    UIButton *setVisiblePoints = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 380, 160, 40)];
+    // set up button for adding points
+    UIButton *setVisiblePoints = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-80, 350, 160, 40)];
     [setVisiblePoints setTitle:@"Set Visible Points" forState:UIControlStateNormal];
     [setVisiblePoints setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [setVisiblePoints setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
     [setVisiblePoints addTarget:self action:@selector(numberOfPointsVisible) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:setVisiblePoints];
+    
+    // set up button for filling space below graph line
+    UIButton *setFilling = [[UIButton alloc]initWithFrame: CGRectMake((self.view.frame.size.width/2)-150, 400, 140, 40)];
+    [setFilling setTitle:@"Fill Graph" forState:UIControlStateNormal];
+    [setFilling setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [setFilling setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [setFilling addTarget:self action:@selector(setFillingButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:setFilling];
+    
+    // set up button for removing filling space below graph line
+    UIButton *setNoFilling = [[UIButton alloc]initWithFrame: CGRectMake(self.view.frame.size.width-150, 400, 140, 40)];
+    [setNoFilling setTitle:@"Don't Fill Graph" forState:UIControlStateNormal];
+    [setNoFilling setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [setNoFilling setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
+    [setNoFilling addTarget:self action:@selector(setNotFillingButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:setNoFilling];
+    
+    visiblePoints = [[UITextField alloc]initWithFrame:CGRectMake((self.view.frame.size.width/2)-150, 355, 60, 30)];
+    [visiblePoints setTextAlignment:NSTextAlignmentCenter];
+    [visiblePoints setText:@"100"];
+    [visiblePoints setBorderStyle:UITextBorderStyleRoundedRect];
+    [visiblePoints setReturnKeyType:UIReturnKeyDone];
+    [visiblePoints setDelegate:self];
+    [self.view addSubview:visiblePoints];
 }
 
 -(void)setArrayButtonAction {
@@ -158,7 +182,53 @@
 
 -(void)numberOfPointsVisible {
     
-    [graphView setNumberOfPointsInGraph:100]; // change the int of points here
+    
+    [graphView setNumberOfPointsInGraph:[[NSString stringWithString: visiblePoints.text]floatValue]]; // change the int of points from textField
+
+    
+}
+
+-(void)setFillingButtonAction {
+    
+    [graphView setFill:YES];
+}
+
+-(void)setNotFillingButtonAction {
+    
+    [graphView setFill:NO];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    NSTimeInterval animationDuration = 0.3;
+    CGRect frame = self.view.frame;
+    frame.origin.y -= 216-44;
+    frame.size.height += 216-44;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if ([visiblePoints.text isEqualToString: @""]) {
+        [visiblePoints setText:@"100"];
+    }
+    
+    NSTimeInterval animationDuration = 0.3;
+    CGRect frame = self.view.frame;
+    frame.origin.y += 216-44;
+    frame.size.height -= 216-44;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+    
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

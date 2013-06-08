@@ -157,8 +157,12 @@
         
         int dCount = [pointArray count] - dx;
         
+        NSArray *temp = [[NSArray alloc]initWithArray:pointArray];
+        
+        pointArray = [[NSMutableArray alloc]init];
+        
         for (int i = 0; i < dCount; i++) {
-            [pointArray removeObjectAtIndex:[pointArray count]+i];
+            [pointArray addObject:[temp objectAtIndex:i]];
         }
         
     }
