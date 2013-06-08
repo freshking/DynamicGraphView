@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40E6D20717635B0500C39563 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E6D20617635B0500C39563 /* UIKit.framework */; };
+		40E6D20917635B0500C39563 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E6D20817635B0500C39563 /* Foundation.framework */; };
+		40E6D20B17635B0500C39563 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E6D20A17635B0500C39563 /* CoreGraphics.framework */; };
+		40E6D21117635B0600C39563 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D20F17635B0600C39563 /* InfoPlist.strings */; };
+		40E6D21317635B0600C39563 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6D21217635B0600C39563 /* main.m */; };
+		40E6D21717635B0600C39563 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6D21617635B0600C39563 /* AppDelegate.m */; };
+		40E6D21917635B0600C39563 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D21817635B0600C39563 /* Default.png */; };
+		40E6D21B17635B0600C39563 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D21A17635B0600C39563 /* Default@2x.png */; };
+		40E6D21D17635B0600C39563 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D21C17635B0600C39563 /* Default-568h@2x.png */; };
+		40E6D22017635B0600C39563 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6D21F17635B0600C39563 /* ViewController.m */; };
+		40E6D22317635B0600C39563 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D22117635B0600C39563 /* ViewController.xib */; };
+		40E6D22B17635B0700C39563 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E6D22A17635B0700C39563 /* SenTestingKit.framework */; };
+		40E6D22C17635B0700C39563 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E6D20617635B0500C39563 /* UIKit.framework */; };
+		40E6D22D17635B0700C39563 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E6D20817635B0500C39563 /* Foundation.framework */; };
+		40E6D23517635B0700C39563 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D23317635B0700C39563 /* InfoPlist.strings */; };
+		40E6D23817635B0700C39563 /* DynamicGraphViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6D23717635B0700C39563 /* DynamicGraphViewTests.m */; };
+		40E6D24317635CCE00C39563 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6D24217635CCE00C39563 /* GraphView.m */; };
+		40E6D2481763674500C39563 /* orangeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D2441763674500C39563 /* orangeButton.png */; };
+		40E6D2491763674500C39563 /* orangeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D2451763674500C39563 /* orangeButton@2x.png */; };
+		40E6D24A1763674500C39563 /* orangeButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D2461763674500C39563 /* orangeButtonHighlight.png */; };
+		40E6D24B1763674500C39563 /* orangeButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E6D2471763674500C39563 /* orangeButtonHighlight@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40E6D22E17635B0700C39563 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40E6D1FB17635B0500C39563 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40E6D20217635B0500C39563;
+			remoteInfo = DynamicGraphView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40E6D20317635B0500C39563 /* DynamicGraphView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicGraphView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E6D20617635B0500C39563 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		40E6D20817635B0500C39563 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40E6D20A17635B0500C39563 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		40E6D20E17635B0500C39563 /* DynamicGraphView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicGraphView-Info.plist"; sourceTree = "<group>"; };
+		40E6D21017635B0600C39563 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40E6D21217635B0600C39563 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40E6D21417635B0600C39563 /* DynamicGraphView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicGraphView-Prefix.pch"; sourceTree = "<group>"; };
+		40E6D21517635B0600C39563 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		40E6D21617635B0600C39563 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		40E6D21817635B0600C39563 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		40E6D21A17635B0600C39563 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		40E6D21C17635B0600C39563 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		40E6D21E17635B0600C39563 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		40E6D21F17635B0600C39563 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		40E6D22217635B0600C39563 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		40E6D22917635B0700C39563 /* DynamicGraphViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicGraphViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E6D22A17635B0700C39563 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		40E6D23217635B0700C39563 /* DynamicGraphViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicGraphViewTests-Info.plist"; sourceTree = "<group>"; };
+		40E6D23417635B0700C39563 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40E6D23617635B0700C39563 /* DynamicGraphViewTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicGraphViewTests.h; sourceTree = "<group>"; };
+		40E6D23717635B0700C39563 /* DynamicGraphViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicGraphViewTests.m; sourceTree = "<group>"; };
+		40E6D24117635CCE00C39563 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		40E6D24217635CCE00C39563 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		40E6D2441763674500C39563 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButton.png; sourceTree = "<group>"; };
+		40E6D2451763674500C39563 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButton@2x.png"; sourceTree = "<group>"; };
+		40E6D2461763674500C39563 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButtonHighlight.png; sourceTree = "<group>"; };
+		40E6D2471763674500C39563 /* orangeButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButtonHighlight@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40E6D20017635B0500C39563 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E6D20717635B0500C39563 /* UIKit.framework in Frameworks */,
+				40E6D20917635B0500C39563 /* Foundation.framework in Frameworks */,
+				40E6D20B17635B0500C39563 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40E6D22517635B0700C39563 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E6D22B17635B0700C39563 /* SenTestingKit.framework in Frameworks */,
+				40E6D22C17635B0700C39563 /* UIKit.framework in Frameworks */,
+				40E6D22D17635B0700C39563 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40E6D1FA17635B0500C39563 = {
+			isa = PBXGroup;
+			children = (
+				40E6D20C17635B0500C39563 /* DynamicGraphView */,
+				40E6D23017635B0700C39563 /* DynamicGraphViewTests */,
+				40E6D20517635B0500C39563 /* Frameworks */,
+				40E6D20417635B0500C39563 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40E6D20417635B0500C39563 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40E6D20317635B0500C39563 /* DynamicGraphView.app */,
+				40E6D22917635B0700C39563 /* DynamicGraphViewTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40E6D20517635B0500C39563 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40E6D20617635B0500C39563 /* UIKit.framework */,
+				40E6D20817635B0500C39563 /* Foundation.framework */,
+				40E6D20A17635B0500C39563 /* CoreGraphics.framework */,
+				40E6D22A17635B0700C39563 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40E6D20C17635B0500C39563 /* DynamicGraphView */ = {
+			isa = PBXGroup;
+			children = (
+				40E6D21517635B0600C39563 /* AppDelegate.h */,
+				40E6D21617635B0600C39563 /* AppDelegate.m */,
+				40E6D21E17635B0600C39563 /* ViewController.h */,
+				40E6D21F17635B0600C39563 /* ViewController.m */,
+				40E6D24117635CCE00C39563 /* GraphView.h */,
+				40E6D24217635CCE00C39563 /* GraphView.m */,
+				40E6D22117635B0600C39563 /* ViewController.xib */,
+				40E6D20D17635B0500C39563 /* Supporting Files */,
+			);
+			path = DynamicGraphView;
+			sourceTree = "<group>";
+		};
+		40E6D20D17635B0500C39563 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40E6D2441763674500C39563 /* orangeButton.png */,
+				40E6D2451763674500C39563 /* orangeButton@2x.png */,
+				40E6D2461763674500C39563 /* orangeButtonHighlight.png */,
+				40E6D2471763674500C39563 /* orangeButtonHighlight@2x.png */,
+				40E6D20E17635B0500C39563 /* DynamicGraphView-Info.plist */,
+				40E6D20F17635B0600C39563 /* InfoPlist.strings */,
+				40E6D21217635B0600C39563 /* main.m */,
+				40E6D21417635B0600C39563 /* DynamicGraphView-Prefix.pch */,
+				40E6D21817635B0600C39563 /* Default.png */,
+				40E6D21A17635B0600C39563 /* Default@2x.png */,
+				40E6D21C17635B0600C39563 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40E6D23017635B0700C39563 /* DynamicGraphViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				40E6D23617635B0700C39563 /* DynamicGraphViewTests.h */,
+				40E6D23717635B0700C39563 /* DynamicGraphViewTests.m */,
+				40E6D23117635B0700C39563 /* Supporting Files */,
+			);
+			path = DynamicGraphViewTests;
+			sourceTree = "<group>";
+		};
+		40E6D23117635B0700C39563 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40E6D23217635B0700C39563 /* DynamicGraphViewTests-Info.plist */,
+				40E6D23317635B0700C39563 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40E6D20217635B0500C39563 /* DynamicGraphView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40E6D23B17635B0700C39563 /* Build configuration list for PBXNativeTarget "DynamicGraphView" */;
+			buildPhases = (
+				40E6D1FF17635B0500C39563 /* Sources */,
+				40E6D20017635B0500C39563 /* Frameworks */,
+				40E6D20117635B0500C39563 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicGraphView;
+			productName = DynamicGraphView;
+			productReference = 40E6D20317635B0500C39563 /* DynamicGraphView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40E6D22817635B0700C39563 /* DynamicGraphViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40E6D23E17635B0700C39563 /* Build configuration list for PBXNativeTarget "DynamicGraphViewTests" */;
+			buildPhases = (
+				40E6D22417635B0700C39563 /* Sources */,
+				40E6D22517635B0700C39563 /* Frameworks */,
+				40E6D22617635B0700C39563 /* Resources */,
+				40E6D22717635B0700C39563 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40E6D22F17635B0700C39563 /* PBXTargetDependency */,
+			);
+			name = DynamicGraphViewTests;
+			productName = DynamicGraphViewTests;
+			productReference = 40E6D22917635B0700C39563 /* DynamicGraphViewTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40E6D1FB17635B0500C39563 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Bastian Kohlbauer";
+			};
+			buildConfigurationList = 40E6D1FE17635B0500C39563 /* Build configuration list for PBXProject "DynamicGraphView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40E6D1FA17635B0500C39563;
+			productRefGroup = 40E6D20417635B0500C39563 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40E6D20217635B0500C39563 /* DynamicGraphView */,
+				40E6D22817635B0700C39563 /* DynamicGraphViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40E6D20117635B0500C39563 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E6D21117635B0600C39563 /* InfoPlist.strings in Resources */,
+				40E6D21917635B0600C39563 /* Default.png in Resources */,
+				40E6D21B17635B0600C39563 /* Default@2x.png in Resources */,
+				40E6D21D17635B0600C39563 /* Default-568h@2x.png in Resources */,
+				40E6D22317635B0600C39563 /* ViewController.xib in Resources */,
+				40E6D2481763674500C39563 /* orangeButton.png in Resources */,
+				40E6D2491763674500C39563 /* orangeButton@2x.png in Resources */,
+				40E6D24A1763674500C39563 /* orangeButtonHighlight.png in Resources */,
+				40E6D24B1763674500C39563 /* orangeButtonHighlight@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40E6D22617635B0700C39563 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E6D23517635B0700C39563 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40E6D22717635B0700C39563 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40E6D1FF17635B0500C39563 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E6D21317635B0600C39563 /* main.m in Sources */,
+				40E6D21717635B0600C39563 /* AppDelegate.m in Sources */,
+				40E6D22017635B0600C39563 /* ViewController.m in Sources */,
+				40E6D24317635CCE00C39563 /* GraphView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40E6D22417635B0700C39563 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E6D23817635B0700C39563 /* DynamicGraphViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40E6D22F17635B0700C39563 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40E6D20217635B0500C39563 /* DynamicGraphView */;
+			targetProxy = 40E6D22E17635B0700C39563 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40E6D20F17635B0600C39563 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40E6D21017635B0600C39563 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		40E6D22117635B0600C39563 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40E6D22217635B0600C39563 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		40E6D23317635B0700C39563 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40E6D23417635B0700C39563 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40E6D23917635B0700C39563 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40E6D23A17635B0700C39563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40E6D23C17635B0700C39563 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicGraphView/DynamicGraphView-Prefix.pch";
+				INFOPLIST_FILE = "DynamicGraphView/DynamicGraphView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		40E6D23D17635B0700C39563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicGraphView/DynamicGraphView-Prefix.pch";
+				INFOPLIST_FILE = "DynamicGraphView/DynamicGraphView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		40E6D23F17635B0700C39563 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DynamicGraphView.app/DynamicGraphView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicGraphView/DynamicGraphView-Prefix.pch";
+				INFOPLIST_FILE = "DynamicGraphViewTests/DynamicGraphViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		40E6D24017635B0700C39563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DynamicGraphView.app/DynamicGraphView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicGraphView/DynamicGraphView-Prefix.pch";
+				INFOPLIST_FILE = "DynamicGraphViewTests/DynamicGraphViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40E6D1FE17635B0500C39563 /* Build configuration list for PBXProject "DynamicGraphView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40E6D23917635B0700C39563 /* Debug */,
+				40E6D23A17635B0700C39563 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40E6D23B17635B0700C39563 /* Build configuration list for PBXNativeTarget "DynamicGraphView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40E6D23C17635B0700C39563 /* Debug */,
+				40E6D23D17635B0700C39563 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		40E6D23E17635B0700C39563 /* Build configuration list for PBXNativeTarget "DynamicGraphViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40E6D23F17635B0700C39563 /* Debug */,
+				40E6D24017635B0700C39563 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40E6D1FB17635B0500C39563 /* Project object */;
+}
