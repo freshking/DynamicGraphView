@@ -27,10 +27,15 @@
     BOOL fillGraph;
         
     UILabel *max;
+    UILabel *zero;
     UILabel *min;
+    
+    int setZero;
     
     UIColor *strokeColor;
     UIColor *fillColor;
+    
+    UIColor *zeroLineStrokeColor;
     
     int lineWidth;
 }
@@ -52,6 +57,9 @@
 
 // set the color of the graph line. default = [UIColor redColor].
 -(void)setStrokeColor:(UIColor*)color;
+
+// set the color of the zero line. default = [UIColor greenColor].
+-(void)setZeroLineStrokeColor:(UIColor*)color;
 
 // set the filled space below graph. default = [UIColor orangeColor].
 -(void)setFillColor:(UIColor*)color;

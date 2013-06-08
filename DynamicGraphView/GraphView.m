@@ -33,6 +33,8 @@
         
         fillColor = [UIColor orangeColor];
         
+        zeroLineStrokeColor = [UIColor greenColor];
+        
         lineWidth = 2;
         
         max = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 25, 16)];
@@ -41,6 +43,12 @@
         [max setTextColor:[UIColor blackColor]];
         [max setText:@"10"];
         [self addSubview:max];
+        
+        zero = [[UILabel alloc] initWithFrame:CGRectMake(2, (self.frame.size.height/2)-7.5, 25, 16)];
+        [zero setAdjustsFontSizeToFitWidth:YES];
+        [zero setBackgroundColor:[UIColor clearColor]];
+        [zero setTextColor:[UIColor blackColor]];
+        [self addSubview:zero];
         
         min = [[UILabel alloc] initWithFrame:CGRectMake(2, self.frame.size.height-15, 25, 16)];
         [min setAdjustsFontSizeToFitWidth:YES];
@@ -125,6 +133,13 @@
     [self setNeedsDisplay];
 }
 
+-(void)setZeroLineStrokeColor:(UIColor*)color {
+    
+    zeroLineStrokeColor = color;
+    
+    [self setNeedsDisplay];
+}
+
 -(void)setFillColor:(UIColor*)color {
     
     fillColor = color;
@@ -177,6 +192,18 @@
     
     [self calculateHeight];
     
+    // draw null line in the middle
+    if (setZero == 2) {
+        
+        [zeroLineStrokeColor setStroke];
+        
+        UIBezierPath *zeroLine = [UIBezierPath bezierPath];
+        [zeroLine moveToPoint:CGPointMake(0, self.frame.size.height/2)];
+        [zeroLine addLineToPoint:CGPointMake(self.frame.size.width, self.frame.size.height/2)];
+        zeroLine.lineWidth = lineWidth; // line width
+        [zeroLine stroke];
+    }
+    
     UIBezierPath *aPath = [UIBezierPath bezierPath];
     
     CGPoint leftBottom = CGPointMake(0, self.frame.size.height);
@@ -189,13 +216,13 @@
         int viewHeight = self.frame.size.height;
         
         float point1x = viewWidth - (viewWidth / dx) * i; // start graph x on the right hand side
-        float point1y = viewHeight - (viewHeight / dy) * [[pointArray objectAtIndex:i]floatValue]; //start graph y on the bottom
+        float point1y = (viewHeight - (viewHeight / dy) * [[pointArray objectAtIndex:i]floatValue]) / setZero; //start graph y on the bottom
         
         float point2x = viewWidth - (viewWidth / dx) * i - (viewWidth / dx);
         float point2y = point1y;
         
         if (i != [pointArray count]-1) {
-            point2y = viewHeight - (viewHeight / dy) * [[pointArray objectAtIndex:i+1]floatValue];
+            point2y = (viewHeight - (viewHeight / dy) * [[pointArray objectAtIndex:i+1]floatValue]) / setZero;
         }
         
         if (i == 0) {
@@ -240,8 +267,31 @@
         }
     }
     
-    dy = maxValue + spaceing;
-    [max setText:[NSString stringWithFormat:@"%i", (maxValue + spaceing) ]];
+    // get minValue for dy
+    int minValue = 0;
+    for (int i = 0; i < [pointArray count]; i++) {
+        if (minValue > [[pointArray objectAtIndex:i]integerValue]) {
+            minValue = [[pointArray objectAtIndex:i]integerValue];
+        }
+    }
+    
+    dy = maxValue + abs(minValue) + spaceing;
+    
+    // set maxValue and round the float
+    [max setText:[NSString stringWithFormat:@"%i", (int)(dy + 0.0) ]];
+    
+    
+    // set graphView for values below 0
+    if (minValue < 0) {
+        setZero = 2;
+        [zero setText:@"0"];
+        [min setText:[NSString stringWithFormat:@"%i", (int)(dy + 0.0) ]];
+    }else{
+        setZero = 1;
+        [zero setText:@""];
+        [min setText:[NSString stringWithFormat:@"0"]];
+    }
+
     
 }
 

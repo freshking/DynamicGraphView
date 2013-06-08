@@ -36,6 +36,7 @@
     [graphView setSpacing:10];
     [graphView setFill:YES];
     [graphView setStrokeColor:[UIColor redColor]];
+    [graphView setZeroLineStrokeColor:[UIColor greenColor]];
     [graphView setFillColor:[UIColor orangeColor]];
     [graphView setLineWidth:2];
     [self.view addSubview:graphView];
@@ -43,7 +44,6 @@
     // setting up a border around the view. for this you need to: #import <QuartzCore/QuartzCore.h> 
     [graphView.layer setBorderColor:[UIColor redColor].CGColor];
     [graphView.layer setBorderWidth:2];
-    
     
     // button images
     UIImage *buttonImage = [[UIImage imageNamed:@"orangeButton.png"]
@@ -169,9 +169,13 @@
 
 -(void)setPointButtonAction {
     
-    float r = arc4random() % 100 + 0; // generating a random number between 0 and 100
-    
-    [graphView setPoint:r];
+    // generate random numbers between +100 and -100
+    float low_bound = -100.00;
+    float high_bound = 100.00;
+    float rndValue = (((float)arc4random()/0x100000000)*(high_bound-low_bound)+low_bound);    
+    int intRndValue = (int)(rndValue + 0.5);
+        
+    [graphView setPoint:intRndValue];
     
 }
 
