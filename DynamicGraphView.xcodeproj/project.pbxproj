@@ -475,6 +475,7 @@
 				40E6D23D17635B0700C39563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40E6D23E17635B0700C39563 /* Build configuration list for PBXNativeTarget "DynamicGraphViewTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				40E6D24017635B0700C39563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

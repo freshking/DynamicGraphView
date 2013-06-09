@@ -39,11 +39,12 @@
     [graphView setZeroLineStrokeColor:[UIColor greenColor]];
     [graphView setFillColor:[UIColor orangeColor]];
     [graphView setLineWidth:2];
+    [graphView setCurvedLines:YES];
     [self.view addSubview:graphView];
     
     // setting up a border around the view. for this you need to: #import <QuartzCore/QuartzCore.h> 
-    [graphView.layer setBorderColor:[UIColor redColor].CGColor];
-    [graphView.layer setBorderWidth:2];
+    //[graphView.layer setBorderColor:[UIColor redColor].CGColor];
+    //[graphView.layer setBorderWidth:2];
     
     // button images
     UIImage *buttonImage = [[UIImage imageNamed:@"orangeButton.png"]

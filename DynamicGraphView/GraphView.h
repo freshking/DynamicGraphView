@@ -38,6 +38,9 @@
     UIColor *zeroLineStrokeColor;
     
     int lineWidth;
+    
+    int granularity;
+    
 }
 
 // add point to the array dynamically
@@ -69,5 +72,8 @@
 
 // set up the number of values diplayes in the graph along the x-axis
 -(void)setNumberOfPointsInGraph:(int)numberOfPoints;
+
+// set curved graph lines. default = YES;
+-(void)setCurvedLines:(BOOL)curved;
 
 @end
