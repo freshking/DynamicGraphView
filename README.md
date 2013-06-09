@@ -3,7 +3,9 @@ DynamicGraphView
 
 A simple but effective dynamic GraphView implementation for iPhone SDK for float values.
 
-![Screenshot](http://i.imgur.com/Kur98cx.png)
+The left image shows a graph with only positive values ans without curved lines. The right graph draws from positve and negative values and hast the option for curved lines activated.
+
+![Screenshot](http://i.imgur.com/Kur98cx.png)-----![Screenshot](http://i.imgur.com/uN8ddq8.jpg)
 
 Implementing this control into your project is very easy.
 
@@ -38,6 +40,7 @@ Implementing this control into your project is very easy.
     [graphView setZeroLineStrokeColor:[UIColor greenColor]];
     [graphView setFillColor:[UIColor orangeColor]];
     [graphView setLineWidth:2];
+    [graphView setCurvedLines:YES];
     [self.view addSubview:graphView];
     }
 
