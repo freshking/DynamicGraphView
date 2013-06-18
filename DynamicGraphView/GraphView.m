@@ -73,22 +73,8 @@
 
 -(void)setPoint:(float)point {
     
-    NSArray *temp = [[NSArray alloc]initWithArray:pointArray];
-    
-    //store point in first place and move rest of entries down 1 row
-    for (int i = 0; i < [temp count]; i++) {
-        
-        if (i != 0) { // first row
-            
-            [pointArray replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:[[temp objectAtIndex:i-1]floatValue]]];
-            
-        }
-        
-    }
-    
-    [pointArray replaceObjectAtIndex:0 withObject:[NSNumber numberWithFloat:point]];
-    
-    
+    [pointArray insertObject:[NSNumber numberWithFloat:point] atIndex:0];
+    [pointArray removeObjectAtIndex:[pointArray count] - 1];
     
     [self setNeedsDisplay];
 }
