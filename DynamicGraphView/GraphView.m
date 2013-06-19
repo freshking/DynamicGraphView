@@ -159,12 +159,8 @@
         
         int dCount = [pointArray count] - dx;
         
-        NSArray *temp = [[NSArray alloc]initWithArray:pointArray];
-        
-        pointArray = [[NSMutableArray alloc]init];
-        
         for (int i = 0; i < dCount; i++) {
-            [pointArray addObject:[temp objectAtIndex:i]];
+            [pointArray removeLastObject];
         }
         
     }
@@ -297,22 +293,9 @@
 
 // this is where the dynamic height of the graph is calculated
 -(void)calculateHeight {
-    
-    // get maxValue for dy
-    int maxValue = 0;
-    for (int i = 0; i < [pointArray count]; i++) {
-        if (maxValue < [[pointArray objectAtIndex:i]integerValue]) {
-            maxValue = [[pointArray objectAtIndex:i]integerValue];
-        }
-    }
-    
-    // get minValue for dy
-    int minValue = 0;
-    for (int i = 0; i < [pointArray count]; i++) {
-        if (minValue > [[pointArray objectAtIndex:i]integerValue]) {
-            minValue = [[pointArray objectAtIndex:i]integerValue];
-        }
-    }
+   
+    int minValue = [[pointArray valueForKeyPath:@"@min.self"] integerValue];
+    int maxValue = [[pointArray valueForKeyPath:@"@max.self"] integerValue];
     
     dy = maxValue + abs(minValue) + spaceing;
     
@@ -324,14 +307,12 @@
     if (minValue < 0) {
         setZero = 2;
         [zero setText:@"0"];
-        [min setText:[NSString stringWithFormat:@"%i", (int)(dy + 0.0) ]];
+        [min setText:[NSString stringWithFormat:@"-%i", (int)(dy + 0.0) ]];
     }else{
         setZero = 1;
         [zero setText:@""];
         [min setText:[NSString stringWithFormat:@"0"]];
     }
-
-    
 }
 
 @end
