@@ -22,7 +22,7 @@
     float dx; 
     float dy;
     
-    int spaceing;
+    int spacing;
     
     BOOL fillGraph;
         
