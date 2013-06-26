@@ -63,7 +63,7 @@
         
         pointArray = [[NSMutableArray alloc]init]; //stores the energy values
         for (int i = 0; i < dx; i++) {
-            [pointArray addObject:[NSNumber numberWithFloat:0.0f]];
+            [pointArray addObject:@0.0f];
         }
         
     }
@@ -73,7 +73,7 @@
 
 -(void)setPoint:(float)point {
     
-    [pointArray insertObject:[NSNumber numberWithFloat:point] atIndex:0];
+    [pointArray insertObject:@(point) atIndex:0];
     [pointArray removeObjectAtIndex:[pointArray count] - 1];
     
     [self setNeedsDisplay];
@@ -83,7 +83,7 @@
         
     pointArray = [[NSMutableArray alloc]init]; //stores the energy values
     for (int i = 0; i < dx; i++) {
-        [pointArray addObject:[NSNumber numberWithFloat:0.0f]];
+        [pointArray addObject:@0.0f];
     }
     
     [self setNeedsDisplay];
@@ -150,7 +150,7 @@
         int dCount = dx - [pointArray count];
         
         for (int i = 0; i < dCount; i++) {
-            [pointArray addObject:[NSNumber numberWithFloat:0.0f]];
+            [pointArray addObject:@(0.0f)];
         }
         
     }
@@ -203,20 +203,20 @@
     NSMutableArray *points = [[self arrayOfPoints] mutableCopy];
         
     // Add control points to make the math make sense
-    [points insertObject:[points objectAtIndex:0] atIndex:0];
+    [points insertObject:points[0] atIndex:0];
     [points addObject:[points lastObject]];
     
     UIBezierPath *lineGraph = [UIBezierPath bezierPath];
     
-    [lineGraph moveToPoint:[[points objectAtIndex:0] CGPointValue]];
+    [lineGraph moveToPoint:[points[0] CGPointValue]];
     
     for (NSUInteger index = 1; index < points.count - 2; index++)
     {
         
-        CGPoint p0 = [(NSValue *)[points objectAtIndex:index - 1] CGPointValue];
-        CGPoint p1 = [(NSValue *)[points objectAtIndex:index] CGPointValue];
-        CGPoint p2 = [(NSValue *)[points objectAtIndex:index + 1] CGPointValue];
-        CGPoint p3 = [(NSValue *)[points objectAtIndex:index + 2] CGPointValue];
+        CGPoint p0 = [(NSValue *)points[index - 1] CGPointValue];
+        CGPoint p1 = [(NSValue *)points[index] CGPointValue];
+        CGPoint p2 = [(NSValue *)points[index + 1] CGPointValue];
+        CGPoint p3 = [(NSValue *)points[index + 2] CGPointValue];
         
         // now add n points starting at p1 + dx/dy up until p2 using Catmull-Rom splines
         for (int i = 1; i < granularity; i++)
@@ -236,7 +236,7 @@
     }
     
     // finish by adding the last point
-    [lineGraph addLineToPoint:[(NSValue *)[points objectAtIndex:(points.count - 1)] CGPointValue]];
+    [lineGraph addLineToPoint:[(NSValue *)points[(points.count - 1)] CGPointValue]];
     
     [fillColor setFill];
     [strokeColor setStroke];
@@ -257,34 +257,34 @@
     
 }
 
--(NSArray*)arrayOfPoints {
+- (NSArray*)arrayOfPoints {
     
     NSMutableArray *points = [NSMutableArray array];
     
-    int viewWidth = self.frame.size.width;
-    int viewHeight = self.frame.size.height;
+    int viewWidth = CGRectGetWidth(self.frame);
+    int viewHeight = CGRectGetHeight(self.frame);
     
     for (int i = 0; i < [pointArray count]; i++) {
         
         
         float point1x = viewWidth - (viewWidth / dx) * i; // start graph x on the right hand side
-        float point1y = (viewHeight - (viewHeight / dy) * [[pointArray objectAtIndex:i]floatValue]) / setZero; //start graph y on the bottom
+        float point1y = (viewHeight - (viewHeight / dy) * [pointArray[i] floatValue]) / setZero; //start graph y on the bottom
         
         float point2x = viewWidth - (viewWidth / dx) * i - (viewWidth / dx);
         float point2y = point1y;
         
         if (i != [pointArray count]-1) {
-            point2y = (viewHeight - (viewHeight / dy) * [[pointArray objectAtIndex:i+1]floatValue]) / setZero;
+            point2y = (viewHeight - (viewHeight / dy) * [pointArray[i+1] floatValue]) / setZero;
         }
+
+        CGPoint p;
         
         if (i == 0) {
-            CGPoint p1 = CGPointMake(point1x, point1y);
-            [points addObject:[NSValue valueWithCGPoint:p1]];
+            p = CGPointMake(point1x, point1y);
         }else{
-            
-            CGPoint p2 = CGPointMake(point2x, point2y);
-            [points addObject:[NSValue valueWithCGPoint:p2]];
+            p = CGPointMake(point2x, point2y);
         }
+        [points addObject:[NSValue valueWithCGPoint:p]];
     }
         
     return points;
