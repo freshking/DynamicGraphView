@@ -28,7 +28,7 @@
         
         fillGraph = YES;
         
-        spaceing = 10;
+        spacing = 10;
         
         strokeColor = [UIColor redColor];
         
@@ -45,13 +45,13 @@
         [max setText:@"10"];
         [self addSubview:max];
         
-        zero = [[UILabel alloc] initWithFrame:CGRectMake(2, (self.frame.size.height/2)-7.5, 25, 16)];
+        zero = [[UILabel alloc] initWithFrame:CGRectMake(2, CGRectGetMidY(self.frame) - 7.5, 25, 16)];
         [zero setAdjustsFontSizeToFitWidth:YES];
         [zero setBackgroundColor:[UIColor clearColor]];
         [zero setTextColor:[UIColor blackColor]];
         [self addSubview:zero];
         
-        min = [[UILabel alloc] initWithFrame:CGRectMake(2, self.frame.size.height-15, 25, 16)];
+        min = [[UILabel alloc] initWithFrame:CGRectMake(2, CGRectGetHeight(self.frame)-15, 25, 16)];
         [min setAdjustsFontSizeToFitWidth:YES];
         [min setBackgroundColor:[UIColor clearColor]];
         [min setTextColor:[UIColor blackColor]];
@@ -101,7 +101,7 @@
 
 -(void)setSpacing:(int)space {
     
-    spaceing = space;
+    spacing = space;
     
     [self setNeedsDisplay];
 }
@@ -213,7 +213,7 @@
     for (NSUInteger index = 1; index < points.count - 2; index++)
     {
         
-        CGPoint p0 =  [(NSValue *)[points objectAtIndex:index - 1] CGPointValue];
+        CGPoint p0 = [(NSValue *)[points objectAtIndex:index - 1] CGPointValue];
         CGPoint p1 = [(NSValue *)[points objectAtIndex:index] CGPointValue];
         CGPoint p2 = [(NSValue *)[points objectAtIndex:index + 1] CGPointValue];
         CGPoint p3 = [(NSValue *)[points objectAtIndex:index + 2] CGPointValue];
@@ -297,7 +297,7 @@
     int minValue = [[pointArray valueForKeyPath:@"@min.self"] integerValue];
     int maxValue = [[pointArray valueForKeyPath:@"@max.self"] integerValue];
     
-    dy = maxValue + abs(minValue) + spaceing;
+    dy = maxValue + abs(minValue) + spacing;
     
     // set maxValue and round the float
     [max setText:[NSString stringWithFormat:@"%i", (int)(dy + 0.0) ]];
