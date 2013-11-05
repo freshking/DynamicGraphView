@@ -19,13 +19,13 @@
     
     NSMutableArray *pointArray;
     
-    float dx; 
+    float dx;
     float dy;
     
     int spacing;
     
     BOOL fillGraph;
-        
+    
     UILabel *max;
     UILabel *zero;
     UILabel *min;
@@ -75,5 +75,8 @@
 
 // set curved graph lines. default = YES;
 -(void)setCurvedLines:(BOOL)curved;
+
+// hides the axis labels
+-(void)hideAxis:(BOOL)yesOrNo;
 
 @end

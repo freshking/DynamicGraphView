@@ -331,4 +331,12 @@
     }
 }
 
+// hides the axis labels
+- (void)hideAxis:(BOOL)yesOrNo
+{
+    [max setHidden:yesOrNo];
+    [min setHidden:yesOrNo];
+    [zero setHidden:yesOrNo];
+}
+
 @end
