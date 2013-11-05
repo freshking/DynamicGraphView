@@ -18,57 +18,71 @@
 @implementation GraphView
 
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        
-        self.backgroundColor = [UIColor yellowColor];
-        
-        fillGraph = YES;
-        
-        spacing = 10;
-        
-        strokeColor = [UIColor redColor];
-        
-        fillColor = [UIColor orangeColor];
-        
-        zeroLineStrokeColor = [UIColor greenColor];
-        
-        lineWidth = 2;
-        
-        max = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 25, 16)];
-        [max setAdjustsFontSizeToFitWidth:YES];
-        [max setBackgroundColor:[UIColor clearColor]];
-        [max setTextColor:[UIColor blackColor]];
-        [max setText:@"10"];
-        [self addSubview:max];
-        
-        zero = [[UILabel alloc] initWithFrame:CGRectMake(2, CGRectGetMidY(self.frame) - 7.5, 25, 16)];
-        [zero setAdjustsFontSizeToFitWidth:YES];
-        [zero setBackgroundColor:[UIColor clearColor]];
-        [zero setTextColor:[UIColor blackColor]];
-        [self addSubview:zero];
-        
-        min = [[UILabel alloc] initWithFrame:CGRectMake(2, CGRectGetHeight(self.frame)-15, 25, 16)];
-        [min setAdjustsFontSizeToFitWidth:YES];
-        [min setBackgroundColor:[UIColor clearColor]];
-        [min setTextColor:[UIColor blackColor]];
-        [min setText:@"0"];
-        [self addSubview:min];
-        
-        dx = 50; // number of points shown in graph
-        dy = 100; // default value for dy
-        
-        pointArray = [[NSMutableArray alloc]init]; //stores the energy values
-        for (int i = 0; i < dx; i++) {
-            [pointArray addObject:@0.0f];
-        }
-        
+        [self setupGraph];
     }
     
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setupGraph];
+    }
+    
+    return self;
+}
+
+- (void)setupGraph
+{
+    // Initialization code
+    
+    self.backgroundColor = [UIColor yellowColor];
+    
+    fillGraph = YES;
+    
+    spacing = 10;
+    
+    strokeColor = [UIColor redColor];
+    
+    fillColor = [UIColor orangeColor];
+    
+    zeroLineStrokeColor = [UIColor greenColor];
+    
+    lineWidth = 2;
+    
+    max = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 25, 16)];
+    [max setAdjustsFontSizeToFitWidth:YES];
+    [max setBackgroundColor:[UIColor clearColor]];
+    [max setTextColor:[UIColor blackColor]];
+    [max setText:@"10"];
+    [self addSubview:max];
+    
+    zero = [[UILabel alloc] initWithFrame:CGRectMake(2, CGRectGetMidY(self.frame) - 7.5, 25, 16)];
+    [zero setAdjustsFontSizeToFitWidth:YES];
+    [zero setBackgroundColor:[UIColor clearColor]];
+    [zero setTextColor:[UIColor blackColor]];
+    [self addSubview:zero];
+    
+    min = [[UILabel alloc] initWithFrame:CGRectMake(2, CGRectGetHeight(self.frame)-15, 25, 16)];
+    [min setAdjustsFontSizeToFitWidth:YES];
+    [min setBackgroundColor:[UIColor clearColor]];
+    [min setTextColor:[UIColor blackColor]];
+    [min setText:@"0"];
+    [self addSubview:min];
+    
+    dx = 50; // number of points shown in graph
+    dy = 100; // default value for dy
+    
+    pointArray = [[NSMutableArray alloc]init]; //stores the energy values
+    for (int i = 0; i < dx; i++) {
+        [pointArray addObject:@0.0f];
+    }
 }
 
 -(void)setPoint:(float)point {
@@ -80,7 +94,7 @@
 }
 
 -(void)resetGraph {
-        
+    
     pointArray = [[NSMutableArray alloc]init]; //stores the energy values
     for (int i = 0; i < dx; i++) {
         [pointArray addObject:@0.0f];
@@ -201,7 +215,7 @@
     CGPoint rightBottom = CGPointMake(self.frame.size.width, self.frame.size.height);
     
     NSMutableArray *points = [[self arrayOfPoints] mutableCopy];
-        
+    
     // Add control points to make the math make sense
     [points insertObject:points[0] atIndex:0];
     [points addObject:[points lastObject]];
@@ -247,13 +261,13 @@
         [lineGraph closePath];
         [lineGraph fill]; // fill color (if closed)
     }
-
+    
     lineGraph.lineCapStyle = kCGLineCapRound;
     lineGraph.lineJoinStyle = kCGLineJoinRound;
     lineGraph.flatness = 0.5;
     lineGraph.lineWidth = lineWidth; // line width
     [lineGraph stroke];
-
+    
     
 }
 
@@ -276,7 +290,7 @@
         if (i != [pointArray count]-1) {
             point2y = (viewHeight - (viewHeight / dy) * [pointArray[i+1] floatValue]) / setZero;
         }
-
+        
         CGPoint p;
         
         if (i == 0) {
@@ -285,15 +299,17 @@
             p = CGPointMake(point2x, point2y);
         }
         [points addObject:[NSValue valueWithCGPoint:p]];
+        
+        NSLog(@"point: %@", NSStringFromCGPoint(p));
     }
-        
+    
     return points;
-        
+    
 }
 
 // this is where the dynamic height of the graph is calculated
 -(void)calculateHeight {
-   
+    
     int minValue = [[pointArray valueForKeyPath:@"@min.self"] integerValue];
     int maxValue = [[pointArray valueForKeyPath:@"@max.self"] integerValue];
     
@@ -313,6 +329,14 @@
         [zero setText:@""];
         [min setText:[NSString stringWithFormat:@"0"]];
     }
+}
+
+// hides the axis labels
+- (void)hideAxis:(BOOL)yesOrNo
+{
+    [max setHidden:yesOrNo];
+    [min setHidden:yesOrNo];
+    [zero setHidden:yesOrNo];
 }
 
 @end

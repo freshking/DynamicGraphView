@@ -1,0 +1,21 @@
+# Xcode files        #
+######################
+DynamicGraphView.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/*
+DynamicGraphView.xcodeproj/xcuserdata/*.xcuserdatad/*
+DynamicGraphView.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+DynamicGraphView.xcodeproj/project.xcworkspace/xcuserdata/*
+DynamicGraphView.xcodeproj/xcuserdata/*
+DynamicGraphView.xcodeproj/project.xcworkspace/xcshareddata/DynamicGraphView.xccheckout
+*.xccheckout
+
+# OSX files          #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
