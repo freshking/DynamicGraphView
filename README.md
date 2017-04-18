@@ -9,9 +9,9 @@ The left image shows a graph with only positive values and without curved lines.
 
 Implementing this control into your project is very easy.
 
-#####1) Copy both GraphView.h and GraphView.m into your projet resources.
+##### 1) Copy both GraphView.h and GraphView.m into your projet resources.
 
-#####2) In your ViewController.h:
+##### 2) In your ViewController.h:
 
 
     import <UIKit/UIKit.h>
@@ -28,7 +28,7 @@ Implementing this control into your project is very easy.
 
     @end
 
-#####3) In your ViewController.m:
+##### 3) In your ViewController.m:
 
     - (void)viewDidLoad 
     {
@@ -46,7 +46,7 @@ Implementing this control into your project is very easy.
 
 Done!
 
-#####To control the graph, use following functions:
+##### To control the graph, use following functions:
 
 1) This will display a graph of float values:
 
